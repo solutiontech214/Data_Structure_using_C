@@ -33,7 +33,7 @@ do{
         
     }
     printf("\n Do you Wnat to continue (y/n)? :");
-    scanf("%d",&ch);
+    scanf("%s",&ch);
 }while(ch!='n');
 
 }
