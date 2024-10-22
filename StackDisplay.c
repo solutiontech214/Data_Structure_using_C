@@ -96,12 +96,13 @@ void disp()
     printf("\n Stack is Empty ! First Push Element..");
     return;
     }
-    int count=0;
+    int count=-1;
     //Logic for Displaying Stack element
 do
 {
-    printf("\t %d ",stack[count]);
     count+=1;
+    printf("\t %d ",stack[count]);
+    
 }while(count!=top);
 
 }
