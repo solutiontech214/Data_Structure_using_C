@@ -7,6 +7,10 @@ int stack[10];
 // Simple method declaration name 'push'
 void push();
 
+//Simple method declaration name 'pop'
+void pop();
+
+
 //here i am taking a simple integer variable and assigned -1 value to it 
 //Where there is no elements in an array then the top variable contains value -1 this condition is also called as Stack underflow condition
 // When stack is in underflow condition then we can't delete any element from stack : Beacuse stack is empty.
@@ -19,7 +23,7 @@ void main()
     int choice;
     char ch;
 do{
-    printf("\n 1 push");
+    printf("\n1 Push \n2 Pop");
     printf("\n Enter your Choice :");
     scanf("%d",&choice);
     switch (choice)
@@ -27,6 +31,9 @@ do{
     case 1:
         push();
         break;
+        case 2:
+        pop();
+
     
     default:
     printf("\n Invalid choice ! Please try again...");
@@ -41,6 +48,7 @@ do{
 //Main Logic for Pushing Element on Stack..
 void push()
 {
+    //check condition for stack is full or not .
     if(top==max-1)
     {
         printf("\n Can't Push ! Stack is OverFlow / Full. \n First Pop an Element the try to Push");
@@ -55,21 +63,18 @@ void push()
     printf(" \n%d is inserted successfully..",stack[top]);
     return;
 }
-/*A Stack is a linear data structure that follows a particular order in which the operations are performed. 
-The order may be LIFO(Last In First Out) or FILO(First In Last Out).
- LIFO implies that the element that is inserted last, comes out first and FILO implies that the element that is inserted first, comes out last.*/
 
- //Key Operations on Stack Data Structures
-//Push: Adds an element to the top of the stack.
-//Pop: Removes the top element from the stack.
-//Peek: Returns the top element without removing it.
-//IsEmpty: Checks if the stack is empty.
-//IsFull: Checks if the stack is full (in case of fixed-size arrays).
+//Main Logic For POPPING or  Deleting an element from stack..
+void pop()
+{
+    //check condition for stack is empty or not .
+if(top==-1)
+{
+    printf("\n Stack Underflow !!\n First Insert An Element then Try again to POP ");
+    return;
+}
+printf("%d is Popped from Stack..",stack[top]);
+top-=1;
+return;
 
-/*Applications of Stack Data Structures
-Recursion
-Expression Evaluation and Parsing
-Depth-First Search (DFS)
-Undo/Redo Operations
-Browser History
-Function Calls  */
+}
