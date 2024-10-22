@@ -30,7 +30,7 @@ void main()
     char ch;
 do{
     printf("--------------- Menu Operaion Menu ---------------");
-    printf("\n1 Push \n2 Pop \n3 Disp \n4 Peek");
+    printf("\n1 Push \n2 Pop \n3 Disp \n4 Peek \n5 Exit");
     printf("\n Enter your Choice :");
     scanf("%d",&choice);
     switch (choice)
