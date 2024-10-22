@@ -15,7 +15,7 @@ void main()
     do
     {
         printf("\n1. Insert Begining \n2. Exit");
-        printf("Enter your Choice :");
+        printf("\n Enter your Choice :");
         scanf("%d",&choice);
         switch(choice)
         {
@@ -44,11 +44,12 @@ void insertBeg()
         start=n;
         n->next=NULL;
         printf("\n %d is Inserted at Begining of SLL.",n->val);
-        return;
+       
     }
-    n->next=start->next;
+    else{  n->next=start->next;
     start=n;
-    printf("%d",n->val);
+    printf("%d",n->val);}
+  
 
 
 }
