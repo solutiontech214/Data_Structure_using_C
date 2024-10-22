@@ -33,6 +33,7 @@ do{
         break;
         case 2:
         pop();
+        break;
 
     
     default:
