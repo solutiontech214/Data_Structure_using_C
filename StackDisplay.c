@@ -100,7 +100,7 @@ void disp()
     //Logic for Displaying Stack element
 do
 {
-    printf("\t %d ",stack[top]);
+    printf("\t %d ",stack[count]);
     count+=1;
 }while(count!=top);
 
