@@ -26,6 +26,7 @@ void main()
         {
             printf("\n%d is present at index %d..",key,i);
             key=0;
+            break;
         }
 
     }
