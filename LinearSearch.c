@@ -2,7 +2,7 @@
 #include<conio.h>
 //Declared integer array with size 10
 int array[10];
-
+int key=0;
 //main  method starts
 void main()
 {
@@ -13,7 +13,7 @@ void main()
         scanf("%d",&array[i]);
 
     }
-    int key;
+    
 
     //getting key element to search
     printf("Enter Key Element to Search Within Array :");
