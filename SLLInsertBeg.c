@@ -24,7 +24,7 @@ void main()
             case 2:exit(0);break;
         }
         printf("\n Do You Want to Continue (y/n) :");
-        scanf("%d",&ch);
+        scanf("%s",&ch);
     } while (ch!='n');
     
 }
@@ -39,7 +39,7 @@ void insertBeg()
     }
     printf("Enter Value to Insert :");
     scanf("%d",&n->val);
-    if(start=NULL)
+    if(start==NULL)
     {
         start=n;
         n->next=NULL;
@@ -48,7 +48,7 @@ void insertBeg()
     }
     else{  n->next=start->next;
     start=n;
-    printf("%d",n->val);}
+     printf("\n %d is Inserted at Begining of SLL.",n->val);}
   
 
 
