@@ -11,11 +11,11 @@ struct tree *root;
 void insert();
 void search();
 
-void main()
+int main()
 {
  int choice;
  char ch;
- clrscr();
+ 
  do{
  printf("\n1 Insert \n2 Search.");
  printf("\n Enter Your Choice :");
@@ -38,7 +38,7 @@ void main()
  scanf("%s",&ch);
 
  }while(ch!='n');
-	  getch();
+	 
 }
 void insert()
 {
