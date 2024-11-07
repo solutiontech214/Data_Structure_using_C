@@ -29,7 +29,7 @@ do{
     }
     printf("Continue (Y/N) :");
     scanf("%s",&choice);
-}while(ch=='y');
+}while(choice=='y');
 
 }
 void insert()
