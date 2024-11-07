@@ -19,7 +19,7 @@ do{
     printf("\n 3 Display List");
     printf("\n Enter your Choice :");
     scanf("%d",&ch);
-    switch(choice)
+    switch(ch)
     {
         case 1: insert();break;
         case 2: display();break;
@@ -27,7 +27,7 @@ do{
         printf("Invalid choice Please try again...!!!");
 
     }
-    printf("Continue (Y/N) :");
+    printf("\n\n Continue (Y/N) :");
     scanf("%s",&choice);
 }while(choice=='y');
 
@@ -37,16 +37,16 @@ void insert()
 struct node *n=(struct node *)malloc(sizeof(struct node));
 if(n==NULL)
 {
-    printf("Memory Allocation Failed..!");
+    printf("\n Memory Allocation Failed..!");
     return;
 }
-printf("Enter Value to Insert :");
+printf("\n Enter Value to Insert :");
 scanf("%d",&n->data);
 n->next=NULL;
 if(start==NULL)
 {
     start=n;
-    printf("Insertion of %d Successfull...",n->data);
+    printf("\n Insertion of %d Successfull...",n->data);
     return;
 }
 struct node *temp;
@@ -56,7 +56,7 @@ while(temp->next!=NULL)
     temp=temp->next;
 }
 temp->next=n;
- printf("Insertion of %d Successfull...",temp->next->data);
+ printf("\n Insertion of %d Successfull...",n->data);
 return;
 }
 
@@ -70,6 +70,35 @@ void display()
     struct node *temp=start;
     while(temp!=NULL)
     {
-        printf("%d",temp->data);
+        printf("\n %d",temp->data);
+        temp=temp->next;
     }
+}
+
+void rev()
+{
+    struct node *prev,*nxt;
+    if(start!=NULL)
+    {
+    prev=start;
+    nxt=start->next;
+
+    }
+    else{
+        printf("\n List is empty.......!!");
+        return;
+    }
+    while(nxt!=NULL)
+    {
+     start->next= nxt->next;
+     nxt->next=prev;
+     start=nxt;
+     prev=start;
+
+
+    }
+    
+    printf("\n List is Reversed Successfully....");
+    return;
+
 }
