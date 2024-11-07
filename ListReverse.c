@@ -28,7 +28,7 @@ do{
 
     }
     printf("Continue (Y/N) :");
-    scanf("%s",&ch);
+    scanf("%s",&choice);
 }while(ch=='y');
 
 }
