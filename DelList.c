@@ -7,94 +7,37 @@ struct node
     struct node *next;
 };
 struct node *start=NULL;
-void insertBeg();
+
 void display();
-void delete_Specf();
+void delete_specf();
 void main()
 {
-    int choice;
-    char ch;
-    do
-    {
-        printf("\n1. Insert Begining \n2. Delete Specf \n3. Display \n4.Exit");
-        printf("\n Enter your Choice :");
-        scanf("%d",&choice);
-        switch(choice)
-        {
-            case 1: insertBeg(); break;
-
-            case 2:delete_Specf();break;
-            case 3:display();break;
-            case 4:exit(0);break;
-        }
-        printf("\n Do You Want to Continue (y/n) :");
-        scanf("%s",&ch);
-    } while (ch!='n');
-    
-}
-
-void insertBeg()
-{
-    struct node *n=(struct node *)malloc(sizeof(struct node));
-    if(n==NULL)
-    {
-     printf("\n Unable to Allocate Memory !! Please try again Leter..");
-     return;   
-    }
-    printf("Enter Value to Insert :");
-    scanf("%d",&n->val);
-    if(start==NULL)
-    {
-        start=n;
-        n->next=NULL;
-        printf("\n %d is Inserted at Begining of SLL.",n->val);
-       
-    }
-    else{  n->next=start->next;
-    start=n;
-     printf("\n %d is Inserted at Begining of SLL.",n->val);}
-  
-
-
-}
-void delete_Specf()
-{
-    int key;
-if(start==NULL)
-{
-    printf("SLL is empty.......");
-    return;
-}
-printf("Enter the Key After You Want to Insert :");
-scanf("%d",&key);
-struct node *n=(struct node *)malloc(sizeof(struct node));
-printf("Enter element to insert :");
-scanf("%d",&n->val);
-struct node *temp=start;
-if(start->val==key)
-{
-    n->next=start->next;
-    start->next=n;
-    printf("%d is inserted successfully..",n->val);
-    return;
-}
-do
-{
-    temp=temp->next;
-
-}
-while(key!=temp->val);
-n->next=temp->next;
-temp->next=n;
-printf("%d is inserted...",n->val);
-return;
+    struct node *n1=(struct node *)malloc(sizeof(struct node ));
+    struct node *n2=(struct node *)malloc(sizeof(struct node ));
+    struct node *n3=(struct node *)malloc(sizeof(struct node ));
+    struct node *n4=(struct node *)malloc(sizeof(struct node ));
+    struct node *n5=(struct node *)malloc(sizeof(struct node ));
+    start=n1;
+    n1->val=20;
+    n1->next=n2;
+    n2->val=30;
+    n2->next=n3;
+    n3->val=40;
+    n3->next=n4;
+    n4->val=50;
+    n4->next=n5;
+    n5->val=60;
+    n5->next=NULL;
+display();
+delete_specf();
+display();
 
 }
 void display()
 {
 if(start==NULL)
 {
-    printf("list is empty.....");
+    printf("\nlist is empty.....");
     return;
 
 }
@@ -104,4 +47,41 @@ while(temp!=NULL)
     printf("%d \t",temp->val);
     temp=temp->next;
 }
+}
+
+
+void delete_specf() {
+    int key;
+    if (start == NULL) {
+        printf("SLL is empty.......\n");
+        return;
+    }
+
+    printf("Enter the Key You Want to Delete: ");
+    scanf("%d", &key);
+
+    struct node *prev = start, *temp = start->next;
+
+    // Check if the key is in the first node
+    if (start->val == key) {
+        start = start->next;
+        free(prev);
+        return;
+    }
+
+    while (temp != NULL) {
+        if (temp->val == key) {
+            prev->next = temp->next;
+            printf("%d is deleted\n", temp->val);
+            free(temp);
+            break;
+        }
+        prev = temp;
+        temp = temp->next;
+    }
+
+    // Check if the key wasn't found and temp is the last node
+    if (temp == NULL && prev->val != key) {
+        printf("Key not found in the list.\n");
+    }
 }
