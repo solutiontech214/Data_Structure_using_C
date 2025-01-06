@@ -1,8 +1,7 @@
-#include <stdio.h>
+#include<stdio.h>
 void main()
 {
-    for (int i = 1; i <= 100; i++)
-    {
-        printf("%d    ", i);
-    }
+int rollno[]={136,135,137,140};
+int lenght=sizeof(rollno)/sizeof(rollno[0]);
+printf("The lenght of the array is %d",lenght);
 }
