@@ -3,7 +3,7 @@ void main()
 {
 int num;
 printf("enter a number:");
-scanf("%d",&num);
+scanf("%is",&num);
 int fact=1;
 while(num>=1)
 {
