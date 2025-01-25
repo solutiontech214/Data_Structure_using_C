@@ -1,5 +1,4 @@
-#include<stdio.h>
-#include<conio.h>
+ude<conio.h>
 int main()
 {
 char name[30],address[40];
