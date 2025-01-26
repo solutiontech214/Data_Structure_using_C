@@ -45,4 +45,5 @@ void main()
             high=mid-1;
         }
     }
+    getch();
 }
