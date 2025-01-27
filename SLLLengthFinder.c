@@ -33,6 +33,7 @@ void main()
     n5->data=50;
     n5->next=NULL;
     printf("\n Length of the singly linked list is: %d",length(head));
+    getch();
 }
 int length(struct node *head)
 {
